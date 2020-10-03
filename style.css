@@ -1,3 +1,8 @@
+:root {
+    --color-green: rgb(44, 146, 90);
+    --color-light-grey: #dfdfdf;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,27 +11,66 @@
     box-sizing: border-box;
 }
 
-body {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-h1 {
-    text-align: center;
-    font-size: 50px;
-    color: rgb(44, 146, 90);
+.money-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .customer {
-    position: absolute;
-    left: -220px;
-    top: 239px;
+    margin: 0 10px 130px 0;
 }
 
 .server {
-    position: absolute;
-    left: 320px;
-    top: 400px;
+    margin: 235px 0 0 10px;
+}
+
+h1 {
+    color: var(--color-green);
+    font-size: 60px;
+}
+
+.rate {
+    color: var(--color-green);
+    font-size: 25px;
+}
+
+select {
+    width: 70px;
+    padding: .8em .5em;
+    border: 1px solid #999;
+    font-family: inherit;
+    background: url('img/arrow.jpg') no-repeat 95% 50%;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 15px;
+    border-radius: 10px;
+    border-color: var(--color-light-grey);
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+input {
+    border: 0;
+    background: transparent;
+    font-size: 30px;
+    text-align: right;
+}
+
+select:focus,
+input:focus,
+button:focus {
+    outline: 0;
 }

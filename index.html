@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Exchange</title>
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-<body>
-    <h1>Exchange Calculator</h1>
-    <img src="img/exchange.png" alt="" class="exchange-image">
-    <div class="customer">
-        <select id="customer-choice">
+  <body>
+    <div class="container">
+      <h1>Exchange Calculator</h1>
+      <div class="money-container">
+        <div class="customer">
+          <select class="customer-choice">
             <option value="AED">AED</option>
             <option value="ARS">ARS</option>
             <option value="AUD">AUD</option>
@@ -64,12 +64,18 @@
             <option value="UYU">UYU</option>
             <option value="VND">VND</option>
             <option value="ZAR">ZAR</option>
-        </select>
-        <input type="number" id="customer-price" placeholder="0" value="1" />
-    </div>
+          </select>
+          <input
+            type="number"
+            class="customer-price"
+            placeholder="0"
+            value="1"
+          />
+        </div>
+        <img src="img/exchange.png" alt="image" class="exchange-image" />
 
-    <div class="server">
-        <select id="server-choice">
+        <div class="server money">
+          <select class="server-choice">
             <option value="AED">AED</option>
             <option value="ARS">ARS</option>
             <option value="AUD">AUD</option>
@@ -122,10 +128,12 @@
             <option value="UYU">UYU</option>
             <option value="VND">VND</option>
             <option value="ZAR">ZAR</option>
-        </select>
-        <input type="number" id="server-price" placeholder="0" value="1" />
+          </select>
+          <input type="number" class="server-price" placeholder="0" value="1" />
+        </div>
+      </div>
+      <div class="rate">안녕하세요</div>
     </div>
-
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>
