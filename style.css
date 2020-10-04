@@ -1,76 +1,76 @@
 :root {
-    --color-green: rgb(44, 146, 90);
-    --color-light-grey: #dfdfdf;
+  --color-green: rgb(44, 146, 90);
+  --color-light-grey: #dfdfdf;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    font-family: montserrat;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: montserrat;
+  box-sizing: border-box;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .money-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.customer {
-    margin: 0 10px 130px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .server {
-    margin: 235px 0 0 10px;
+  margin: 0 10px 130px 0;
+}
+
+.customer {
+  margin: 235px 0 0 10px;
 }
 
 h1 {
-    color: var(--color-green);
-    font-size: 60px;
+  color: var(--color-green);
+  font-size: 60px;
 }
 
-.rate {
-    color: var(--color-green);
-    font-size: 25px;
+.rate-text {
+  color: var(--color-green);
+  font-size: 25px;
 }
 
 select {
-    width: 70px;
-    padding: .8em .5em;
-    border: 1px solid #999;
-    font-family: inherit;
-    background: url('img/arrow.jpg') no-repeat 95% 50%;
-    border-radius: 0px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    font-size: 15px;
-    border-radius: 10px;
-    border-color: var(--color-light-grey);
+  width: 70px;
+  padding: 0.8em 0.5em;
+  border: 1px solid #999;
+  font-family: inherit;
+  background: url("img/arrow.jpg") no-repeat 95% 50%;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 15px;
+  border-radius: 10px;
+  border-color: var(--color-light-grey);
 }
 
 select::-ms-expand {
-    display: none;
+  display: none;
 }
 
 input {
-    border: 0;
-    background: transparent;
-    font-size: 30px;
-    text-align: right;
+  border: 0;
+  background: transparent;
+  font-size: 30px;
+  text-align: right;
 }
 
 select:focus,
 input:focus,
 button:focus {
-    outline: 0;
+  outline: 0;
 }
