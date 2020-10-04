@@ -1,5 +1,5 @@
 const rate = {
-  data: [],
+    data: [],
 };
 
 // api json 파일 불러옴
@@ -33,51 +33,51 @@ const rate = {
 }
 */
 function getRate() {
-  return fetch(`https://open.exchangerate-api.com/v6/latest`)
-    .then((response) => response.json())
-    .then((json) => json.rates);
+    return fetch(`https://open.exchangerate-api.com/v6/latest`)
+        .then((response) => response.json())
+        .then((json) => json.rates);
 }
 
 function exchangeMoney(rate) {
-  const serverSelect = document.querySelector(".server-choice");
-  const customerSelect = document.querySelector(".customer-choice");
-  const serverInput = document.querySelector(".server-price");
-  const customerInput = document.querySelector(".customer-price");
-  const rates = rate.data[customerSelect.value];
-  const rateText = document.querySelector(".rate-text");
-  rateText.innerText = `1 ${customerSelect.value} = ${rates} ${serverSelect.value}`;
-  serverInput.value = (customerInput.value * rates).toFixed(2);
+    const serverSelect = document.querySelector(".server-choice");
+    const customerSelect = document.querySelector(".customer-choice");
+    const serverInput = document.querySelector(".server-price");
+    const customerInput = document.querySelector(".customer-price");
+    const rates = (rate.data[customerSelect.value] / rate.data[serverSelect.value]).toFixed(5);
+    const rateText = document.querySelector(".rate-text");
+    rateText.innerText = `1 ${customerSelect.value} = ${rates} ${serverSelect.value}`;
+    serverInput.value = (customerInput.value * rates).toFixed(2);
 }
 
 function onChangeClick(rate) {
-  const serverSelect = document.querySelector(".server-choice");
-  const customerSelect = document.querySelector(".customer-choice");
-  const tmp = customerSelect.value;
-  customerSelect.value = serverSelect.value;
-  serverSelect.value = tmp;
-  exchangeMoney(rate);
+    const serverSelect = document.querySelector(".server-choice");
+    const customerSelect = document.querySelector(".customer-choice");
+    const tmp = customerSelect.value;
+    customerSelect.value = serverSelect.value;
+    serverSelect.value = tmp;
+    exchangeMoney(rate);
 }
 
 function setEventListreners(rate) {
-  const serverSelect = document.querySelector(".server-choice");
-  const customerSelect = document.querySelector(".customer-choice");
-  const serverInput = document.querySelector(".server-price");
-  const customerInput = document.querySelector(".customer-price");
-  const changeButton = document.querySelector(".exchange-image");
-  serverSelect.addEventListener("change", () => exchangeMoney(rate));
-  customerSelect.addEventListener("change", () => exchangeMoney(rate));
-  serverInput.addEventListener("input", () => exchangeMoney(rate));
-  customerInput.addEventListener("input", () => exchangeMoney(rate));
-  changeButton.addEventListener("click", () => onChangeClick(rate));
+    const serverSelect = document.querySelector(".server-choice");
+    const customerSelect = document.querySelector(".customer-choice");
+    const serverInput = document.querySelector(".server-price");
+    const customerInput = document.querySelector(".customer-price");
+    const changeButton = document.querySelector(".exchange-image");
+    serverSelect.addEventListener("change", () => exchangeMoney(rate));
+    customerSelect.addEventListener("change", () => exchangeMoney(rate));
+    serverInput.addEventListener("input", () => exchangeMoney(rate));
+    customerInput.addEventListener("input", () => exchangeMoney(rate));
+    changeButton.addEventListener("click", () => onChangeClick(rate));
 }
 
 function init() {
-  getRate()
-    .then((items) => {
-      rate.data = items;
-      setEventListreners(rate);
-    })
-    .catch(console.log());
+    getRate()
+        .then((items) => {
+            rate.data = items;
+            setEventListreners(rate);
+        })
+        .catch(console.log());
 }
 
 init();
